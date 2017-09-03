@@ -1,3 +1,4 @@
+/*
 package samsungPro;
 
 import java.io.BufferedReader;
@@ -7,9 +8,11 @@ import java.util.Arrays;
 import java.util.PriorityQueue;
 import java.util.StringTokenizer;
 
+*/
 /**
  * Created by pose2 on 2017-08-26.
- */
+ *//*
+
 public class Main {
 
     static int[] dp;
@@ -66,13 +69,7 @@ public class Main {
 
                 for(int i = 1; i<K+1; i++){
                     if(tmpNode.cardArray[i] > 0 && i != tmpNode.presentCard){
-<<<<<<< HEAD
-                        int[] tmpArray = tmpNode.cardArray.clone();
-                        tmpArray[i]--;
-                        Node a = new Node(i,tmpNode.index+i,tmpNode.cost+map[tmpNode.index+i],tmpArray.clone(),tmpNode.bitmask);
-                        pq.offer(a);
-                        tmpArray[i]++;
-=======
+
 
                         int tmpPoint = tmpNode.bitmask+(int)Math.pow(6,i);
 
@@ -86,7 +83,6 @@ public class Main {
                             pq.offer(a);
                             tmpArray[i]++;
                         }
->>>>>>> 712eee3117d107094332066ef0c3ab9c4caa8a78
                     }
                 }
 
@@ -126,3 +122,4 @@ class Node implements Comparable<Node>{
         return cost - o.cost;
     }
 }
+*/

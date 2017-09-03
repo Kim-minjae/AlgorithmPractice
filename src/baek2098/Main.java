@@ -20,8 +20,7 @@ public class Main {
         int N = Integer.parseInt(st.nextToken());
 
         int[][] map = new int[N][N];
-        int[] dp = new int[(int)Math.pow(2,16)+1];
-
+        int[] dp = new int[(int)Math.pow(2,17)+1];
 
         PriorityQueue<Node> pq = new PriorityQueue<>();
 
@@ -39,11 +38,11 @@ public class Main {
 
             tmpNode = pq.poll();
 
-            if(tmpNode.getBitmask() == ((int)(Math.pow(2,16))-1)) break;
+            if(tmpNode.getBitmask() == ((int)(Math.pow(2,N))-1)) break;
 
             pq.offer(tmpNode);
 
-            while (!pq.isEmpty() && (tmpNode.getBitmask() < (int)(Math.pow(2,16)-2))) {
+            do  {
 
                 tmpNode = pq.poll();
 
@@ -60,24 +59,17 @@ public class Main {
                         }
                     }
                 }
-            }
+            }while(!pq.isEmpty() && (tmpNode.getBitmask() < (int)(Math.pow(2,N)-2)));
+//                dp[(int)Math.pow(2,N)-1] = tmpNode.getCost()+map[tmpNode.getIndex()][0];
 
-            if(dp[(int)Math.pow(2,16)-1]>tmpNode.getCost()+map[tmpNode.getIndex()][0] || dp[(int)Math.pow(2,16)-1] == 0) {
+                Node tmpNode3 = new Node(0,map[tmpNode.getIndex()][0] + tmpNode.getCost(),tmpNode.getBitmask()+1);
+                pq.offer(tmpNode3);
 
-                dp[(int)Math.pow(2,16)-1] = tmpNode.getCost()+map[tmpNode.getIndex()][0];
 
-                tmpNode.setIndex(0);
-                tmpNode.setBitmask(1);
-                tmpNode.setCost(map[tmpNode.getIndex()][0] + tmpNode.getCost());
-
-                pq.offer(tmpNode);
-            }
         }
         System.out.println(tmpNode.getCost());
     }
 }
-
-
 
 class Node implements Comparable<Node>{
 
@@ -95,16 +87,8 @@ class Node implements Comparable<Node>{
         return index;
     }
 
-    public void setIndex(int index) {
-        this.index = index;
-    }
-
     public int getCost() {
         return cost;
-    }
-
-    public void setCost(int cost) {
-        this.cost = cost;
     }
 
     public int getBitmask() {
