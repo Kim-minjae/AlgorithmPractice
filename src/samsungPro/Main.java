@@ -11,6 +11,8 @@ import java.util.StringTokenizer;
  */
 public class Main {
 
+    static int[] dp;
+
     public static void main(String args[])throws IOException{
 
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -19,6 +21,7 @@ public class Main {
         int tc = Integer.parseInt(st.nextToken());
 
         for(int t = 0; t<tc; t++){
+
             st = new StringTokenizer(br.readLine());
             int N = Integer.parseInt(st.nextToken());
             int K = Integer.parseInt(st.nextToken());
@@ -27,6 +30,8 @@ public class Main {
             int[] map = new int[N+7];
             PriorityQueue<Node> pq = new PriorityQueue<>();
             int[] cardArray = new int[K+1];
+            dp = new int[(int)Math.pow(2,K*M)];
+            int bitmask = 0;
 
             for(int i = 1; i<K+1; i++){
                 cardArray[i] = M;
@@ -44,7 +49,7 @@ public class Main {
             }
 
 
-            pq.offer(new Node(0,1,0,cardArray));
+            pq.offer(new Node(0,1,0,cardArray,0));
 
             while (!pq.isEmpty()){
 
@@ -59,7 +64,7 @@ public class Main {
                     if(tmpNode.cardArray[i] > 0 && i != tmpNode.presentCard){
                         int[] tmpArray = tmpNode.cardArray.clone();
                         tmpArray[i]--;
-                        Node a = new Node(i,tmpNode.index+i,tmpNode.cost+map[tmpNode.index+i],tmpArray.clone());
+                        Node a = new Node(i,tmpNode.index+i,tmpNode.cost+map[tmpNode.index+i],tmpArray.clone(),tmpNode.bitmask);
                         pq.offer(a);
                         tmpArray[i]++;
                     }
@@ -78,12 +83,17 @@ class Node implements Comparable<Node>{
     int index;
     int cost;
     int[] cardArray;
+    int bitmask;
 
-    public Node(int presentCard,int index, int cost, int[] cardArray) {
+    public Node(int presentCard, int index, int cost, int[] cardArray, int bitmask) {
         this.presentCard = presentCard;
         this.index = index;
         this.cost = cost;
         this.cardArray = cardArray;
+        this.bitmask = bitmask;
+    }
+    public void setBitmask(){
+
     }
     @Override
     public int compareTo(Node o) {
