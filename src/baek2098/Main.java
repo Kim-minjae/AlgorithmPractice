@@ -19,7 +19,7 @@ public class Main {
         st = new StringTokenizer(br.readLine());
         int N = Integer.parseInt(st.nextToken());
 
-        int[][] map = new int[N][N];
+        int[][] map = new int[16][16];
         int[] dp = new int[(int)Math.pow(2,17)+1];
 
         PriorityQueue<Node> pq = new PriorityQueue<>();
@@ -40,11 +40,11 @@ public class Main {
 
             if(tmpNode.getBitmask() == ((int)(Math.pow(2,N))-1)) break;
 
-            pq.offer(tmpNode);
+//            pq.offer(tmpNode);
 
             do  {
 
-                tmpNode = pq.poll();
+//                tmpNode = pq.poll();
 
                 for(int i = 1; i<N; i++){
                     if(map[tmpNode.getIndex()][i] != 0){
