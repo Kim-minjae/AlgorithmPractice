@@ -34,8 +34,6 @@ public class Main {
             char commend2 = st.nextToken().charAt(0);
             char charTmp;
 
-
-
             switch (commend2){
                 case 'L' :
                     if(!stackLeft.isEmpty()) {
@@ -61,10 +59,7 @@ public class Main {
 
                     default: break;
             }
-
-
         }
-
         //그다음 출력
 
         StringBuilder result = new StringBuilder();

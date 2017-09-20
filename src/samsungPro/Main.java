@@ -13,7 +13,7 @@ import java.util.StringTokenizer;
  * Created by pose2 on 2017-08-26.
  *//*
 
-public class Main {
+public class Kruskal {
 
     static int[] dp;
 
