@@ -7,14 +7,25 @@ import java.io.IOException;
  */
 public class Main {
     public static void main(String args[])throws IOException{
-        int[] sticker = {1,3,2,5,4};
-        int N = sticker.length;
+        int[] sticker = {3,9,16};
 
-        System.out.println(Solution.solution(sticker,N));
+
+        System.out.println(Solution.solution(sticker));
 
     }
     static class Solution{
-        public static int solution(int[] stickers, int N){
+        public static int solution(int[] stickers){
+
+            int N = stickers.length;
+
+            if(N <= 3){
+                int max = 0;
+                for(int i = 0; i<N; i++){
+                    max = Math.max(max,stickers[i]);
+                }
+                return max;
+            }
+
             int[] sticker = new int[N+3];
             for(int i = 0 ; i <N;i++){
                 sticker[i] = stickers[i];
