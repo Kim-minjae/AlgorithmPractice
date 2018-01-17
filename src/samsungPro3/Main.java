@@ -34,9 +34,7 @@ public class Main {
             for(int i = 1; i< N+1; i++){
                 for(int j =1; j<M+1; j++){
                     if(dpMap[i][j] != 0){
-
                         dpMap[i][j] = 1 + Math.min(dpMap[i-1][j-1],Math.min(dpMap[i-1][j],dpMap[i][j-1]));
-
                     }
                 }
             }
@@ -44,19 +42,8 @@ public class Main {
             for(int i =1 ; i<N+1; i++){
                 for(int j = 1; j<M+1; j++){
 
-
-
                 }
             }
-
-            /*for(int i = 0; i<dpMap.length; i++){
-                System.out.println();
-                for(int j = 0; j<dpMap[0].length; j++){
-                    System.out.print(dpMap[i][j]);
-                }
-            }*/
-
         }
-
     }
 }

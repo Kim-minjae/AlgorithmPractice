@@ -1,8 +1,6 @@
 package LGNO2;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import java.io.*;
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.StringTokenizer;
@@ -17,7 +15,15 @@ public class Main {
 
     public static void main(String args[])throws IOException{
 
+        System.setIn(new FileInputStream("input.txt"));
+
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+
+        File file = new File("output.txt");
+        FileOutputStream fileOutputStream = new FileOutputStream(file);
+        PrintStream ps = new PrintStream(fileOutputStream);
+        System.setOut(ps);
+
 
         int tc = Integer.parseInt(br.readLine());
 
@@ -61,7 +67,7 @@ public class Main {
 
             int tmpBcount = 0;
 
-            if(map[1][1] == 'B') tmpBcount = 1;
+            if(map[n][1] == 'B') tmpBcount = 1;
 
             //오른쪽이랑 위쪽 두개 추가
             AngryBird firstBird = new AngryBird(n,1,tmpBcount, true,0);
@@ -79,8 +85,8 @@ public class Main {
 
                 int tmpDirection = tmpBird.direction;
 
-                System.out.println("지금 위치는 -> x : " +tmpBird.getX() + " y : " + tmpBird.getY() + " Bcount = " + tmpBird.getBcount());
-                System.out.println();
+                /*System.out.println("지금 위치는 -> x : " +tmpBird.getX() + " y : " + tmpBird.getY() + " Bcount = " + tmpBird.getBcount());
+                System.out.println();*/
 
                 switch (tmpDirection){
                     case 0 :
@@ -108,24 +114,27 @@ public class Main {
                         }
 
                         //위
-                        if((dpMap[tmpBird.getX()-1][tmpBird.getY()][tmpway] < tmpBird.Bcount+1) && dpMap[tmpBird.getX()-1][tmpBird.getY()][tmpway] != -2){
+                        if(tmpway != 2) {
+                            if ((dpMap[tmpBird.getX() - 1][tmpBird.getY()][tmpway] < tmpBird.Bcount + 1) && dpMap[tmpBird.getX() - 1][tmpBird.getY()][tmpway] != -2) {
 
-                            int tmpBcount1 = tmpBird.getBcount();
+                                int tmpBcount1 = tmpBird.getBcount();
 
-                            if(map[tmpBird.getX()-1][tmpBird.getY()] == 'B') tmpBcount1++; //맞으면하나추가
+                                if (map[tmpBird.getX() - 1][tmpBird.getY()] == 'B') tmpBcount1++; //맞으면하나추가
 
-                            dpMap[tmpBird.getX()-1][tmpBird.getY()][tmpway] = tmpBcount1;
+                                dpMap[tmpBird.getX() - 1][tmpBird.getY()][tmpway] = tmpBcount1;
 
-                            angryBirds.offer(new AngryBird(tmpBird.getX()-1,tmpBird.getY(),tmpBcount1,tmpBird.upDownToggle,1));
+                                angryBirds.offer(new AngryBird(tmpBird.getX() - 1, tmpBird.getY(), tmpBcount1, tmpBird.upDownToggle, 1));
+                            }
                         }
                         //아래
-                        if((dpMap[tmpBird.getX()+1][tmpBird.getY()][tmpway] < tmpBird.Bcount+1) && dpMap[tmpBird.getX()+1][tmpBird.getY()][tmpway] != -2){
+
+                        if((dpMap[tmpBird.getX()+1][tmpBird.getY()][2] < tmpBird.Bcount+1) && dpMap[tmpBird.getX()+1][tmpBird.getY()][2] != -2){
 
                             int tmpBcount1 = tmpBird.getBcount();
 
                             if(map[tmpBird.getX()+1][tmpBird.getY()] == 'B')  tmpBcount1++; //맞으면하나추가
 
-                            dpMap[tmpBird.getX()+1][tmpBird.getY()][tmpway] =  tmpBcount1;
+                            dpMap[tmpBird.getX()+1][tmpBird.getY()][2] =  tmpBcount1;
 
                             angryBirds.offer(new AngryBird(tmpBird.getX()+1,tmpBird.getY(), tmpBcount1,false,2));
                         }
@@ -146,6 +155,17 @@ public class Main {
                             dpMap[tmpBird.getX()][tmpBird.getY()+1][1] = tmpBcount1;
 
                             angryBirds.offer(new AngryBird(tmpBird.getX(),tmpBird.getY()+1,tmpBcount1,true,0));
+                        }
+
+                        if((dpMap[tmpBird.getX()][tmpBird.getY()+1][2] < tmpBird.Bcount+1) && dpMap[tmpBird.getX()][tmpBird.getY()+1][2] != -2){
+
+                            int tmpBcount1 = tmpBird.getBcount();
+
+                            if(map[tmpBird.getX()][tmpBird.getY()+1] == 'B') tmpBcount1++; //맞으면하나추가
+
+                            dpMap[tmpBird.getX()][tmpBird.getY()+1][2] = tmpBcount1;
+
+                            angryBirds.offer(new AngryBird(tmpBird.getX(),tmpBird.getY()+1,tmpBcount1,false,0));
                         }
 
                         //위
