@@ -1,0 +1,4 @@
+
+hsquid:ModifiersOrderCheck"EReorder the modifiers to comply with the Java Language Specification.(ÚÕç¬
+usquid:S00120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ªú­Îúÿÿÿÿ
+Msquid:S1197"8Move the array designator from the variable to the type.(ªÑÄ„

@@ -14,7 +14,7 @@ public class Main2 {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st;
 
-        int tc = Integer.parseInt()
+
 
     }
 }

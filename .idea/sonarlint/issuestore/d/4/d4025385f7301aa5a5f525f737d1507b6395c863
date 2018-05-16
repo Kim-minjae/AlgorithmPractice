@@ -1,0 +1,29 @@
+
+hsquid:ModifiersOrderCheck"EReorder the modifiers to comply with the Java Language Specification.(§ğòï
+Rsquid:S1197"8Move the array designator from the variable to the type.(°ı¤Óøÿÿÿÿ
+fsquid:S3008"LRename this field "T" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(åÜíÓşÿÿÿÿ
+Rsquid:S1197"8Move the array designator from the variable to the type.(“Ç·Áıÿÿÿÿ
+fsquid:S3457"Q%n should be used in place of \n to produce the platform-specific line separator.(ôùÅ–
+Rsquid:S1197"8Move the array designator from the variable to the type.(êÃıÿÿÿÿ
+ƒ"squid:ClassVariableVisibilityCheck"RMake strike a static final constant or non-public and provide accessors if needed.(‚™»üÿÿÿÿ
+Msquid:S1197"8Move the array designator from the variable to the type.(²Ææî
+lsquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ñ›í×şÿÿÿÿ
+Msquid:S1197"8Move the array designator from the variable to the type.(Åáå¦
+fsquid:S3457"Q%n should be used in place of \n to produce the platform-specific line separator.(”•€õ
+msquid:ModifiersOrderCheck"EReorder the modifiers to comply with the Java Language Specification.(‡Ğ¼İıÿÿÿÿ
+usquid:S00115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(‡Ğ¼İıÿÿÿÿ
+hsquid:ModifiersOrderCheck"EReorder the modifiers to comply with the Java Language Specification.(œÊÅ´
+M
+squid:S106"9Replace this use of System.out or System.err by a logger.(”•€õ
+Rsquid:S1197"8Move the array designator from the variable to the type.(ëÒó†üÿÿÿÿ
+usquid:S00120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ªú­Îúÿÿÿÿ
+lsquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(é„´Òşÿÿÿÿ
+gsquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¸‹×
+msquid:S3008"SRename this field "digits_c" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ëÒó†üÿÿÿÿ
+jsquid:S1450"PRemove the "T" field and declare it as a local variable in the relevant methods.(åÜíÓşÿÿÿÿ
+¢%squid:RedundantThrowsDeclarationCheck"lRemove the declaration of thrown exception 'java.lang.Exception', as it cannot be thrown from method's body.(ÍõÏú8·œÀ¶,
+"squid:ClassVariableVisibilityCheck"PMake ball a static final constant or non-public and provide accessors if needed.(­ÑÍïùÿÿÿÿ
+Rsquid:S1197"8Move the array designator from the variable to the type.(é„´Òşÿÿÿÿ
+M
+squid:S106"9Replace this use of System.out or System.err by a logger.(ôùÅ–
+esquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(ù†ôúÿÿÿÿ

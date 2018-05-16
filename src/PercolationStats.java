@@ -1,3 +1,4 @@
+/*
 public class PercolationStats {
     public PercolationStats(int n, int trials) {
 
@@ -18,4 +19,4 @@ public class PercolationStats {
     public static void main(String[] args){
 
     }        // test client (described below)
-}
+}*/

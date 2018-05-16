@@ -1,3 +1,4 @@
+/*
 public class Percolation {
 
 
@@ -24,3 +25,4 @@ public class Percolation {
 
     }   // test client (optional)
 }
+*/
